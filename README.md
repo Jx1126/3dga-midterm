@@ -1,6 +1,6 @@
 <br />
 <div align="center">
-  <a href="https://github.com/Jinx">
+  <a href="https://github.com/Jx1126">
     <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/u/147470595?s=200&v=4&h=300&w=300&fit=cover&mask=circle&maxage=7d" alt="Logo" width="200" height="200">
   </a>
 
