@@ -17,13 +17,22 @@ public class PlayerControl : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
 
         Vector3 movement = new Vector3(horizontal, 0, vertical).normalized;
-        transform.Translate(movement * speed * Time.deltaTime, Space.World);
 
-        Quaternion targetRotation = Quaternion.LookRotation(movement);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+        if (movement.magnitude > 0)
+        {
+            transform.Translate(movement * speed * Time.deltaTime, Space.World);
 
-        float angle = Mathf.Sin(Time.time * armSwingSpeed) * armSwingAngle;
-        leftArm.localRotation = Quaternion.Euler(angle, 0, 0);
-        rightArm.localRotation = Quaternion.Euler(-angle, 0, 0);
+            Quaternion targetRotation = Quaternion.LookRotation(movement);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+
+            float angle = Mathf.Sin(Time.time * armSwingSpeed) * armSwingAngle;
+            leftArm.localRotation = Quaternion.Euler(angle, 0, 0);
+            rightArm.localRotation = Quaternion.Euler(-angle, 0, 0);
+        }
+        else
+        {
+            leftArm.localRotation = Quaternion.Euler(0, 0, 0);
+            rightArm.localRotation = Quaternion.Euler(0, 0, 0);
+        }
     }
 }
