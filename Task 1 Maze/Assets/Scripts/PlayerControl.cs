@@ -11,17 +11,22 @@ public class PlayerControl : MonoBehaviour
     public float armSwingSpeed = 10f;
     public float armSwingAngle = 30f;
 
+    private Rigidbody rb;
+    private Vector3 movement;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     void Update()
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-
-        Vector3 movement = new Vector3(horizontal, 0, vertical).normalized;
+        movement = new Vector3(horizontal, 0, vertical).normalized;
 
         if (movement.magnitude > 0)
         {
-            transform.Translate(movement * speed * Time.deltaTime, Space.World);
-
             Quaternion targetRotation = Quaternion.LookRotation(movement);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
 
@@ -33,6 +38,18 @@ public class PlayerControl : MonoBehaviour
         {
             leftArm.localRotation = Quaternion.Euler(0, 0, 0);
             rightArm.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (movement.magnitude > 0)
+        {
+            rb.velocity = new Vector3(movement.x * speed, rb.velocity.y, movement.z * speed);
+        }
+        else
+        {
+            rb.velocity = new Vector3(0, rb.velocity.y, 0);
         }
     }
 }
