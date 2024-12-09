@@ -5,7 +5,11 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
 
+    public Transform leftArm;
+    public Transform rightArm;
     public float speed = 15f;
+    public float armSwingSpeed = 10f;
+    public float armSwingAngle = 30f;
 
     void Update()
     {
@@ -17,5 +21,9 @@ public class PlayerControl : MonoBehaviour
 
         Quaternion targetRotation = Quaternion.LookRotation(movement);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+
+        float angle = Mathf.Sin(Time.time * armSwingSpeed) * armSwingAngle;
+        leftArm.localRotation = Quaternion.Euler(angle, 0, 0);
+        rightArm.localRotation = Quaternion.Euler(-angle, 0, 0);
     }
 }
