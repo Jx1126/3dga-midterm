@@ -15,6 +15,8 @@ public class PlayerControl : MonoBehaviour
     private Vector3 movement;
     private CameraScript cameraScript;
 
+    private bool collectedKey = false;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -44,7 +46,8 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         float y = Input.GetAxis("Vertical");
         if (y != 0)
         {
@@ -53,6 +56,16 @@ public class PlayerControl : MonoBehaviour
         else
         {
             rb.velocity = new Vector3(0, 0, 0);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Key"))
+        {
+            Destroy(other.gameObject);
+            collectedKey = true;
+            Debug.Log(collectedKey);
         }
     }
 }
