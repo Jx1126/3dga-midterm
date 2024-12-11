@@ -14,7 +14,6 @@ public class PlayerControl : MonoBehaviour
     public float rotationSpeed = 10f;
 
     public TMP_Text keyStatusText;
-
     private Rigidbody rb;
     private Vector3 movement;
     private CameraScript cameraScript;
@@ -73,7 +72,6 @@ public class PlayerControl : MonoBehaviour
             collectedKey = true;
             keyStatusText.text = "Key: Obtained";
             keyStatusText.color = Color.green;
-            Debug.Log(collectedKey);
         }
 
         if(other.gameObject.CompareTag("Exit") && collectedKey)
