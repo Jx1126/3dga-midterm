@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class PlayerControl : MonoBehaviour
     public float armSwingSpeed = 10f;
     public float armSwingAngle = 30f;
     public float rotationSpeed = 10f;
+
+    public TMP_Text keyStatusText;
 
     private Rigidbody rb;
     private Vector3 movement;
@@ -21,6 +25,8 @@ public class PlayerControl : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         cameraScript = FindObjectOfType<CameraScript>();
+        keyStatusText.text = "Key: Unobtained";
+        keyStatusText.color = Color.red;
     }
 
     void Update()
@@ -65,7 +71,15 @@ public class PlayerControl : MonoBehaviour
         {
             Destroy(other.gameObject);
             collectedKey = true;
+            keyStatusText.text = "Key: Obtained";
+            keyStatusText.color = Color.green;
             Debug.Log(collectedKey);
+        }
+
+        if(other.gameObject.CompareTag("Exit") && collectedKey)
+        {
+            Destroy(other.gameObject);
+            SceneManager.LoadScene("EndScene");
         }
     }
 }
