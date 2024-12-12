@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-    public GameObject targetObject;
+    public GameObject playerObject;
     public Vector3 cameraOffset;
     void Start()
     {
@@ -12,7 +12,7 @@ public class CameraScript : MonoBehaviour
 
     void LateUpdate()
     {
-        transform.position = targetObject.transform.position + targetObject.transform.rotation * cameraOffset;
-        transform.rotation = Quaternion.Euler(20, targetObject.transform.rotation.eulerAngles.y, 0);
+        transform.position = playerObject.transform.position + playerObject.transform.rotation * cameraOffset;
+        transform.rotation = Quaternion.Euler(20, playerObject.transform.rotation.eulerAngles.y, 0);
     }
 }
