@@ -174,6 +174,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7775204069494560199, guid: 281f3ffd9e70eb045b7ab67421a3d3ad, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: aab2d8a44d85d2641987511520da25d2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -543,6 +547,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 376982850}
+  - component: {fileID: 376982851}
   m_Layer: 0
   m_Name: Waters
   m_TagString: Untagged
@@ -569,6 +574,20 @@ Transform:
   - {fileID: 1363664370}
   m_Father: {fileID: 285806471}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &376982851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376982849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b465f4826abd741afce75b27f288c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballPhysicMaterial: {fileID: 0}
+  wetBallPhysicMaterial: {fileID: 0}
 --- !u!1001 &418596287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2040,6 +2059,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1184137710}
+  - component: {fileID: 1184137711}
   m_Layer: 0
   m_Name: Waters
   m_TagString: Untagged
@@ -2067,6 +2087,20 @@ Transform:
   - {fileID: 636970423}
   m_Father: {fileID: 2109072414}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1184137711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184137709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b465f4826abd741afce75b27f288c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballPhysicMaterial: {fileID: 0}
+  wetBallPhysicMaterial: {fileID: 0}
 --- !u!1 &1199848142
 GameObject:
   m_ObjectHideFlags: 0
@@ -2872,6 +2906,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1416711936}
+  - component: {fileID: 1416711937}
   m_Layer: 0
   m_Name: Waters
   m_TagString: Untagged
@@ -2897,6 +2932,20 @@ Transform:
   - {fileID: 953643164}
   m_Father: {fileID: 1641943220}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1416711937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416711935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b465f4826abd741afce75b27f288c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballPhysicMaterial: {fileID: 0}
+  wetBallPhysicMaterial: {fileID: 0}
 --- !u!1001 &1426215760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3218,6 +3267,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1494601771}
+  - component: {fileID: 1494601772}
   m_Layer: 0
   m_Name: Waters
   m_TagString: Untagged
@@ -3242,6 +3292,20 @@ Transform:
   - {fileID: 47786361}
   m_Father: {fileID: 509677361}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1494601772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494601770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b465f4826abd741afce75b27f288c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballPhysicMaterial: {fileID: 0}
+  wetBallPhysicMaterial: {fileID: 0}
 --- !u!4 &1537141717 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7801976452085396841, guid: 4ff5a917ee05d4e27a188b977e58d326, type: 3}
@@ -3894,6 +3958,8 @@ GameObject:
   - component: {fileID: 2003636136}
   - component: {fileID: 2003636135}
   - component: {fileID: 2003636137}
+  - component: {fileID: 2003636138}
+  - component: {fileID: 2003636139}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -3967,6 +4033,41 @@ MeshFilter:
   m_GameObject: {fileID: 2003636132}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &2003636137
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003636132}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000001, y: 2.0000002, z: 1.0000002}
+  m_Center: {x: 0.00000009872019, y: 0, z: -0.00000017136335}
+--- !u!114 &2003636138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003636132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b465f4826abd741afce75b27f288c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ballPhysicMaterial: {fileID: 13400000, guid: aab2d8a44d85d2641987511520da25d2, type: 2}
+  wetBallPhysicMaterial: {fileID: 13400000, guid: dd6a1e757ac89734db3628bd80805ff8, type: 2}
+--- !u!65 &2003636139
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4413,6 +4514,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7775204069494560199, guid: 281f3ffd9e70eb045b7ab67421a3d3ad, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: aab2d8a44d85d2641987511520da25d2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
