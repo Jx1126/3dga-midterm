@@ -13,6 +13,6 @@ public class CameraScript : MonoBehaviour
     void LateUpdate()
     {
         transform.position = targetObject.transform.position + targetObject.transform.rotation * cameraOffset;
-        transform.rotation = Quaternion.Euler(30, targetObject.transform.rotation.eulerAngles.y, 0);
+        transform.rotation = Quaternion.Euler(20, targetObject.transform.rotation.eulerAngles.y, 0);
     }
 }
