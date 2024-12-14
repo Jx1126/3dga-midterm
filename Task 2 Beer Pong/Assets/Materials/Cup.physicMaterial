@@ -6,9 +6,9 @@ PhysicMaterial:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BallPhysics
-  dynamicFriction: 0.6
-  staticFriction: 0.6
-  bounciness: 0.4
+  m_Name: Cup
+  dynamicFriction: 1.3
+  staticFriction: 4.02
+  bounciness: 0
   frictionCombine: 0
-  bounceCombine: 0
+  bounceCombine: 1

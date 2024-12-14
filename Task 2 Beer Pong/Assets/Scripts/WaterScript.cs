@@ -7,7 +7,8 @@ public class WaterScript : MonoBehaviour
 
     public PhysicMaterial ballPhysicMaterial;
     public PhysicMaterial wetBallPhysicMaterial;
-    public float reducedBounciness = 0.6f;
+    public float reducedBounciness = 0.2f;
+    // public float increasedFriction = 1f;
 
     void OnTriggerEnter(Collider other)
     {

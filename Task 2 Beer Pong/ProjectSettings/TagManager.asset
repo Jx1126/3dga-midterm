@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Cups
   - Ball
+  - Water
+  - ForceBarContainer
+  - ForceBar
   layers:
   - Default
   - TransparentFX
