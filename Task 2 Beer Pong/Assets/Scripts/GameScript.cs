@@ -2,6 +2,8 @@
     using System.Collections.Generic;
     using UnityEngine;
     using UnityEngine.UI;
+    using UnityEngine.SceneManagement;
+    using TMPro;
 
     public class GameScript : MonoBehaviour
     {
@@ -9,6 +11,7 @@
         public Transform ballStartPos;
         public float ballStartY;
         public int totalBalls = 15;
+        public TMP_Text buttonText;
 
         public Image forceBar;
         public RectTransform forceBarContainer;
@@ -33,6 +36,12 @@
                 else
                 {
                     Debug.Log("No more balls left!");
+                    SceneManager.LoadScene("EndScene");
+                }
+;
+                if (ballsUsed == totalBalls)
+                {
+                    buttonText.text = "RESULT";
                 }
             }
             else

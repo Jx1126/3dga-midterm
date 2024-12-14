@@ -30,13 +30,6 @@ public class BallScript : MonoBehaviour
         trailRenderer.enabled = false;
     }
 
-    public void GetForceBarUI(Image newForceBar, RectTransform newForceBarContainer)
-    {
-        forceBar = newForceBar;
-        forceBarContainer = newForceBarContainer;
-        forceBarContainer.gameObject.SetActive(false);
-    }
-
     void Update()
     {
         if (mouseDragging)
@@ -88,6 +81,13 @@ public class BallScript : MonoBehaviour
 
             forceBarContainer.gameObject.SetActive(false);
         }
+    }
+
+    public void GetForceBarUI(Image newForceBar, RectTransform newForceBarContainer)
+    {
+        forceBar = newForceBar;
+        forceBarContainer = newForceBarContainer;
+        forceBarContainer.gameObject.SetActive(false);
     }
 
     private Vector3 GetMousePos()
