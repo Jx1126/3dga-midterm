@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 695310294287397807}
   - component: {fileID: 5582961055788602951}
   - component: {fileID: 2731678256106549439}
-  - component: {fileID: 562171956309798522}
   - component: {fileID: 969631417574157818}
   - component: {fileID: 7299918390267304823}
   - component: {fileID: -158298808771682314}
+  - component: {fileID: -1446226991502318478}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -87,27 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &562171956309798522
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8218094653537469178}
-  m_Material: {fileID: 13400000, guid: aab2d8a44d85d2641987511520da25d2, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &969631417574157818
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -149,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forceMultiplier: 10
   maxForce: 50
+  ballShot: 0
 --- !u!96 &-158298808771682314
 TrailRenderer:
   serializedVersion: 3
@@ -262,3 +242,24 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!135 &-1446226991502318478
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8218094653537469178}
+  m_Material: {fileID: 13400000, guid: aab2d8a44d85d2641987511520da25d2, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

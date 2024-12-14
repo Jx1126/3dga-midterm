@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class WaterScript : MonoBehaviour
 {
-
     public PhysicMaterial ballPhysicMaterial;
     public PhysicMaterial wetBallPhysicMaterial;
     public float reducedBounciness = 0.2f;
-    // public float increasedFriction = 1f;
 
     void OnTriggerEnter(Collider other)
     {
@@ -19,6 +17,15 @@ public class WaterScript : MonoBehaviour
 
             ball.material = wetBallPhysicMaterial;
             rb.velocity *= reducedBounciness;
+
+            BallScript ballScript = other.gameObject.GetComponent<BallScript>();
+            if (ballScript != null)
+            {
+                ballScript.ballShot = true;
+            }
+            
+            Destroy(other.gameObject, 2.0f);
+            ScoreScript.instance.AddScore();
         }
     }
 }

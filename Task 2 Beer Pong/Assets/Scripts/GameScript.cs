@@ -11,9 +11,9 @@
         public Transform ballStartPos;
         public float ballStartY;
         public int totalBalls = 15;
+        
         public TMP_Text resultText;
         public TMP_Text ballsAmountText;
-
         public Image forceBar;
         public RectTransform forceBarContainer;
 
@@ -29,7 +29,7 @@
 
         public void SpawnNextBall()
         {
-            if (currentBall != null && currentBall.GetComponent<BallScript>().ballShot)
+            if (currentBall == null || currentBall.GetComponent<BallScript>().ballShot)
             {
                 if (ballsUsed < totalBalls)
                 {
@@ -41,15 +41,15 @@
                     Debug.Log("No more balls left!");
                     SceneManager.LoadScene("EndScene");
                 }
-;
-                if (ballsUsed == totalBalls)
-                {
-                    resultText.text = "RESULT";
-                }
             }
             else
             {
                 Debug.Log("Shoot the current ball first before spawning the next one!");
+            }
+
+            if (ballsUsed == totalBalls)
+            {
+                resultText.text = "RESULT";
             }
         }
 
