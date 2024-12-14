@@ -17,8 +17,10 @@ public class KeyScript : MonoBehaviour
 
     void Update()
     {
+        // Rotate the key around the Y axis
         transform.Rotate(Vector3.up, keyRotationSpeed * Time.deltaTime);
         
+        // Use the sine function to make the key float up and down
         float floatingPosition = Mathf.Sin(Time.time * keyFloatingSpeed) * keyFloatingHeight;
         transform.position = originalPosition + new Vector3(0, floatingPosition, 0);
     }
