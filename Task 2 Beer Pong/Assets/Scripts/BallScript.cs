@@ -66,6 +66,7 @@ public class BallScript : MonoBehaviour
             Vector3 direction = mouseDragPos - mousePos;
 
             float force = Mathf.Clamp(direction.magnitude * forceMultiplier, 0, maxForce);
+            force = Mathf.Lerp(0, force, 0.45f);
 
             rb.isKinematic = false;
             rb.AddForce(direction.normalized * force, ForceMode.Impulse);
