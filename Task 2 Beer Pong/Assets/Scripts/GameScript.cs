@@ -11,7 +11,8 @@
         public Transform ballStartPos;
         public float ballStartY;
         public int totalBalls = 15;
-        public TMP_Text buttonText;
+        public TMP_Text resultText;
+        public TMP_Text ballsAmountText;
 
         public Image forceBar;
         public RectTransform forceBarContainer;
@@ -22,6 +23,7 @@
 
         void Start()
         {
+            ballsAmountText.text = "Ball " + (ballsUsed + 1) + " / " + totalBalls;
             SpawnBall();
         }
 
@@ -31,6 +33,7 @@
             {
                 if (ballsUsed < totalBalls)
                 {
+                    ballsAmountText.text = "Ball " + (ballsUsed + 1) + " / " + totalBalls;
                     SpawnBall();
                 }
                 else
@@ -41,7 +44,7 @@
 ;
                 if (ballsUsed == totalBalls)
                 {
-                    buttonText.text = "RESULT";
+                    resultText.text = "RESULT";
                 }
             }
             else
