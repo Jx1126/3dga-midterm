@@ -26,12 +26,15 @@ public class BallScript : MonoBehaviour
 
         mainCamera = Camera.main;
 
-        forceBar = GameObject.FindWithTag("ForceBar").GetComponent<Image>();
-        forceBarContainer = GameObject.FindWithTag("ForceBarContainer").GetComponent<RectTransform>();
-
-        forceBarContainer.gameObject.SetActive(false);
         trailRenderer = GetComponent<TrailRenderer>();
         trailRenderer.enabled = false;
+    }
+
+    public void GetForceBarUI(Image newForceBar, RectTransform newForceBarContainer)
+    {
+        forceBar = newForceBar;
+        forceBarContainer = newForceBarContainer;
+        forceBarContainer.gameObject.SetActive(false);
     }
 
     void Update()

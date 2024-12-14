@@ -1,6 +1,7 @@
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
+    using UnityEngine.UI;
 
     public class GameScript : MonoBehaviour
     {
@@ -8,6 +9,9 @@
         public Transform ballStartPos;
         public float ballStartY;
         public int totalBalls = 15;
+
+        public Image forceBar;
+        public RectTransform forceBarContainer;
 
         private int ballsUsed = 0;
         private GameObject currentBall;
@@ -43,7 +47,11 @@
             {
                 return;
             }
+
             currentBall = Instantiate(ballPrefab, ballStartPos.position, Quaternion.identity);
+            
+            ballScript = currentBall.GetComponent<BallScript>();
+            ballScript.GetForceBarUI(forceBar, forceBarContainer);
             ballsUsed++;
 
             Debug.Log("Spawned Ball " + ballsUsed + " / " + totalBalls);;
