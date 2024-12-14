@@ -10,9 +10,14 @@ public class EndSceneScript : MonoBehaviour
 
     void Start()
     {
+        // Display the score on the end scene
         if (ScoreScript.instance.GetCurrentScore() == 1)
+        {
             scoreText.text = "You were able to bounce " + ScoreScript.instance.GetCurrentScore() + " ball into the cups successfully!";
+        }
         else
+        {
             scoreText.text = "You were able to bounce " + ScoreScript.instance.GetCurrentScore() + " balls into the cups successfully!";
+        }
     }
 }

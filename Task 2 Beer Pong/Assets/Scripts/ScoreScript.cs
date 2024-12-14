@@ -34,11 +34,13 @@ public class ScoreScript : MonoBehaviour
 
         if (score != gameScore)
         {
+            // Save the score from the current game so it can be used in the end scene
             PlayerPrefs.SetInt("GameScore", score);
         }
 
         if (score > highScore)
         {
+            // Save the high score if the current score is higher
             PlayerPrefs.SetInt("HighScore", score);
         }
     }
