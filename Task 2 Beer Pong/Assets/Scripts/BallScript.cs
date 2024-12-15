@@ -13,7 +13,6 @@ public class BallScript : MonoBehaviour
     private Vector3 previousMousePos;
     private Vector3 mouseDragPos;
     private bool mouseDragging = false;
-
     private Camera mainCamera;
     private Image forceBar;
     private RectTransform forceBarContainer;
